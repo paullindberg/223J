@@ -141,6 +141,11 @@ public class Block extends GameObject {
             g.setColor(Color.WHITE);
             g.drawString("Top Score: " + blockhandler.getHighScore(), x, y);
         }
+        if (id == ID.Continue){
+            g.setFont(displayFont);
+            g.setColor(Color.WHITE);
+            g.drawString("Press SHIFT to Continue", x, y);
+        }
 
 
 

@@ -34,6 +34,7 @@ public class Player extends GameObject {
     }
     //Bounds the player within the boundaries of the screen and destroys them if they collide with an enemy object.
     public void collide(){
+        //The following keep the player in bounds
         if (getBounds().x < 0){
             x = 0;
         }

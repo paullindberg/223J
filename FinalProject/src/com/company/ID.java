@@ -7,7 +7,8 @@ public enum ID {
     Enemy(),
     EnemyBullet(),
     Text(),
-    HighScore();
+    HighScore(),
+    Continue();
 
 
 }

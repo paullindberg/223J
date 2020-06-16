@@ -40,7 +40,7 @@ public class KeyInput extends KeyAdapter {
                 if (key == KeyEvent.VK_SPACE){
                     keyhandler.setPlayerFire(true);
                 }
-                if (key == KeyEvent.VK_CONTROL){
+                if (key == KeyEvent.VK_SHIFT){
                     if (!keyhandler.isPlayerAlive()){
                         keyhandler.resetLevel();
                     }

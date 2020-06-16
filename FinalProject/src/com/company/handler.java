@@ -24,6 +24,7 @@ public class handler {
     private Block movingBlock;
     private String scoresFilePath = "C:\\Users\\Paul\\IdeaProjects\\FinalProject\\scores.txt";
     private int highScore = 0;
+    private Block continueBTN = new Block(-200, -200, ID.Continue, this);
 
     public void writeScores(int i){
         try(FileWriter fileWriter = new FileWriter(scoresFilePath)) {
@@ -73,6 +74,8 @@ public class handler {
         int spawns = kills / enemyFactor;
         kills = 0;
         playerAlive = true;
+        continueBTN.setX(-200);
+        continueBTN.setY(-200);
         movingBlock.respawn();
         for (int i = 0; i < object.size(); i++){
             GameObject tempObject = object.get(i);
@@ -116,9 +119,12 @@ public class handler {
         object.add(new Enemy(-500, -100, ID.Enemy, this));
         object.add(new Enemy(-500, -100, ID.Enemy, this));
         movingBlock = new Block(100, 200, ID.Block, this);
-        object.add(movingBlock);
+        //The following line adds a moving cover feature. It works but I feel it's a failed feature from a game design
+        //perspective, so it had been commented out.
+        //object.add(movingBlock);
         object.add(new Block(0, 500, ID.Text, this));
         object.add(new Block(0, 400, ID.HighScore, this));
+        object.add(continueBTN);
     }
 
     //Increasing difficulty factor, spawns a new enemy for every three enemies defeated.
@@ -181,6 +187,9 @@ public class handler {
                 writeScores(kills);
                 highScore = kills;
             }
+            continueBTN.setX(250);
+            continueBTN.setY(300);
+
         }
     }
     //Renders all other objects in the linked list.
