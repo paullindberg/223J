@@ -17,8 +17,10 @@ public class Player extends GameObject {
     private boolean timerAvail = true;
     private boolean isAlive = true;
 
-    private File shootSound = new File("C:\\Users\\Paul\\IdeaProjects\\FinalProject\\src\\sounds\\shoot2.wav");
-    private File deathSound = new File("C:\\Users\\Paul\\IdeaProjects\\FinalProject\\src\\sounds\\death.wav");
+    private File shootSound = new File("src/sounds/shoot2.wav");
+    private File deathSound = new File("src/sounds/death.wav");
+
+
 
     Player(int x, int y, ID id, handler playerHandler){
         super(x, y, id);
@@ -26,6 +28,7 @@ public class Player extends GameObject {
         for (int i = 0; i < 6; i++){
             bullets[i] = new Bullet(-100, -100, ID.Bullet);
             playerHandler.addObject(bullets[i]);
+
 
 
         }

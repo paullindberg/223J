@@ -10,7 +10,7 @@ public class Main extends Canvas implements Runnable {
     private int WIDTH = 800, HEIGHT = 600;
 
     public Main(){
-        new Window(WIDTH, HEIGHT, "Cube Shooter By Paul Lindberg", this);
+        new Window(WIDTH, HEIGHT, "Cube Shooter", this);
         mainhandler = new handler();
         mainhandler.addObject(new Player(350, 550, ID.Player, mainhandler));
         this.addKeyListener(new KeyInput(mainhandler));

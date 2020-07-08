@@ -22,30 +22,30 @@ public class handler {
     private int kills = 0;
     private int enemyFactor = 3;
     private Block movingBlock;
-    private String scoresFilePath = "C:\\Users\\Paul\\IdeaProjects\\FinalProject\\scores.txt";
+//    private String scoresFilePath = "C:\\Users\\Paul\\IdeaProjects\\FinalProject\\scores.txt";
     private int highScore = 0;
     private Block continueBTN = new Block(-200, -200, ID.Continue, this);
 
-    public void writeScores(int i){
-        try(FileWriter fileWriter = new FileWriter(scoresFilePath)) {
-            String fileContent = Integer.toString(i);
-            fileWriter.write(fileContent);
-        } catch (IOException e) {
+//    public void writeScores(int i){
+//        try(FileWriter fileWriter = new FileWriter(scoresFilePath)) {
+//            String fileContent = Integer.toString(i);
+//            fileWriter.write(fileContent);
+//        } catch (IOException e) {
+//
+//        }
+//    }
 
-        }
-    }
-
-    public void readScores(){
-        File file = new File(scoresFilePath);
-        try {
-
-            Scanner sc = new Scanner(file);
-            highScore = Integer.parseInt(sc.nextLine());
-
-        }catch(IOException ie) {
-        ie.printStackTrace();
-    }
-}
+//    public void readScores(){
+//        File file = new File(scoresFilePath);
+//        try {
+//
+//            Scanner sc = new Scanner(file);
+//            highScore = Integer.parseInt(sc.nextLine());
+//
+//        }catch(IOException ie) {
+//        ie.printStackTrace();
+//    }
+//}
         public int getKills() {
         return kills;
     }
@@ -113,7 +113,7 @@ public class handler {
 
     //The main constructor spawns the initial GameObjects.
     public handler(){
-        readScores();
+//        readScores();
         object.add(new Enemy(-500, -100, ID.Enemy, this));
         object.add(new Enemy(-500, -100, ID.Enemy, this));
         object.add(new Enemy(-500, -100, ID.Enemy, this));
@@ -184,7 +184,7 @@ public class handler {
         }
         if (!playerAlive){
             if (kills > highScore) {
-                writeScores(kills);
+//                writeScores(kills);
                 highScore = kills;
             }
             continueBTN.setX(250);
